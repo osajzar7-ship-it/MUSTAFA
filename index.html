@@ -1,1 +1,136 @@
-[https://yourusername.github.io/stationery-catalog/](https://yourusername.github.io/stationery-catalog/)
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة المصطفى - كتالوج القرطاسية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
+        body { background-color: #f8f9fa; color: #333; padding-bottom: 50px; }
+        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 40px 20px; }
+        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        header p { opacity: 0.9; font-size: 1.1rem; }
+        
+        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
+        
+        .controls { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; margin-bottom: 30px; }
+        .search-box { flex: 1; min-width: 250px; padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
+        .categories { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 5px; }
+        .btn-cat { padding: 10px 18px; border: none; background: #e9ecef; border-radius: 20px; cursor: pointer; font-weight: bold; white-space: nowrap; transition: 0.3s; }
+        .btn-cat.active, .btn-cat:hover { background: #1e3c72; color: white; }
+
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { width: 100%; height: 180px; object-fit: cover; background-color: #eee; }
+        .card-body { padding: 15px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 8px; }
+        .card-desc { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
+        .card-price { font-size: 1.2rem; font-weight: bold; color: #2a5298; margin-bottom: 15px; }
+        .btn-order { display: block; width: 100%; text-align: center; background: #25d366; color: white; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: bold; }
+        .btn-order:hover { background: #1ebd56; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>مكتبة المصطفى</h1>
+        <p>أهلاً بكم في كتالوج الأدوات المدرسية والقرطاسية - موسم العودة للمدارس</p>
+    </header>
+
+    <div class="container">
+        <!-- البحث والتصفية -->
+        <div class="controls">
+            <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن قلم، دفتر، باقة..." onkeyup="filterProducts()">
+            <div class="categories">
+                <button class="btn-cat active" onclick="filterCategory('all', this)">الكل</button>
+                <button class="btn-cat" onclick="filterCategory('packages', this)">باقات المدارس</button>
+                <button class="btn-cat" onclick="filterCategory('notebooks', this)">دفاتر ومذكرات</button>
+                <button class="btn-cat" onclick="filterCategory('pens', this)">أقلام ومقالم</button>
+                <button class="btn-cat" onclick="filterCategory('art', this)">رسم وفنون</button>
+            </div>
+        </div>
+
+        <!-- شبكة المنتجات -->
+        <div class="products-grid" id="productsGrid">
+            
+            <!-- منتج 1 -->
+            <div class="card" data-category="packages" data-name="باقة الابتدائي المتكاملة">
+                <img src="https://via.placeholder.com/300x200?text=باقة+الابتدائي" alt="باقة الابتدائي">
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">باقة الابتدائي المتكاملة</div>
+                        <div class="card-desc">تضم دفاتر مسطرة، ألوان غير سامة، مقلمة، وأقلام رصاص وممحاة.</div>
+                    </div>
+                    <div>
+                        <div class="card-price">50 ر.س</div>
+                        <a href="https://wa.me/966000000000?text=مرحباً،%20أود%20الاستفسار%20عن%20باقة%20الابتدائي%20المتكاملة" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 2 -->
+            <div class="card" data-category="notebooks" data-name="دفتر سلك 5 فواصل">
+                <img src="https://via.placeholder.com/300x200?text=دفتر+سلك" alt="دفتر سلك">
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">دفتر سلك مقسم (5 فواصل)</div>
+                        <div class="card-desc">مثالي لطلاب المرحلة المتوسطة، الثانوية والجامعة لتنظيم المواد.</div>
+                    </div>
+                    <div>
+                        <div class="card-price">18 ر.س</div>
+                        <a href="https://wa.me/966000000000?text=مرحباً،%20أود%20طلب%20دفتر%20سلك%205%20فواصل" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 3 -->
+            <div class="card" data-category="pens" data-name="طقم أقلام تمييز باستيل">
+                <img src="https://via.placeholder.com/300x200?text=أقلام+هايلايتر" alt="أقلام تمييز">
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">طقم أقلام تمييز (Pastel)</div>
+                        <div class="card-desc">6 ألوان هادئة للتدوين والمذاكرة دون إجهاد العين.</div>
+                    </div>
+                    <div>
+                        <div class="card-price">15 ر.س</div>
+                        <a href="https://wa.me/966000000000?text=مرحباً،%20أود%20طلب%20طقم%20أقلام%20تمييز" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        let currentCategory = 'all';
+
+        function filterCategory(cat, btn) {
+            currentCategory = cat;
+            document.querySelectorAll('.btn-cat').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterProducts();
+        }
+
+        function filterProducts() {
+            let search = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                let name = card.getAttribute('data-name').toLowerCase();
+                let cat = card.getAttribute('data-category');
+
+                let matchesCat = (currentCategory === 'all' || cat === currentCategory);
+                let matchesSearch = name.includes(search);
+
+                if (matchesCat && matchesSearch) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
