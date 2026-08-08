@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+OCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -88,22 +88,7 @@
             <!-- منتج 3 -->
             <div class="card" data-category="pens" data-name="طقم أقلام تمييز باستيل">
                 <img src="https://via.placeholder.com/300x200?text=أقلام+هايلايتر" alt="أقلام تمييز">
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">طقم أقلام تمييز (Pastel)</div>
-                        <div class="card-desc">6 ألوان هادئة للتدوين والمذاكرة دون إجهاد العين.</div>
-                    </div>
-                    <div>
-                        <div class="card-price">15 ر.س</div>
-                        <a href="https://wa.me/966000000000?text=مرحباً،%20أود%20طلب%20طقم%20أقلام%20تمييز" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <script>
+                pt>
         let currentCategory = 'all';
 
         function filterCategory(cat, btn) {
@@ -114,14 +99,7 @@
         }
 
         function filterProducts() {
-            let search = document.getElementById('searchInput').value.toLowerCase();
-            let cards = document.querySelectorAll('.card');
-
-            cards.forEach(card => {
-                let name = card.getAttribute('data-name').toLowerCase();
-                let cat = card.getAttribute('data-category');
-
-                let matchesCat = (currentCategory === 'all' || cat === currentCategory);
+               let matchesCat = (currentCategory === 'all' || cat === currentCategory);
                 let matchesSearch = name.includes(search);
 
                 if (matchesCat && matchesSearch) {
@@ -132,5 +110,4 @@
             });
         }
     </script>
-</body>
-</html>
+<
