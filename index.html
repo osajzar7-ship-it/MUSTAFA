@@ -1,53 +1,179 @@
-OCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مكتبة المصطفى - كتالوج القرطاسية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>مكتبة المصطفى - الكتالوج الرقمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
-        body { background-color: #f8f9fa; color: #333; padding-bottom: 50px; }
-        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 40px 20px; }
-        header h1 { font-size: 2.2rem; margin-bottom: 10px; }
-        header p { opacity: 0.9; font-size: 1.1rem; }
-        
-        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; }
-        
-        .controls { display: flex; flex-wrap: wrap; gap: 15px; justify-content: space-between; margin-bottom: 30px; }
-        .search-box { flex: 1; min-width: 250px; padding: 12px 15px; border: 1px solid #ccc; border-radius: 8px; font-size: 1rem; }
-        .categories { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 5px; }
-        .btn-cat { padding: 10px 18px; border: none; background: #e9ecef; border-radius: 20px; cursor: pointer; font-weight: bold; white-space: nowrap; transition: 0.3s; }
-        .btn-cat.active, .btn-cat:hover { background: #1e3c72; color: white; }
+        :root {
+            --primary-blue: #0c3866;
+            --secondary-blue: #1b5394;
+            --accent-gold: #f4b41a;
+            --text-dark: #2c2c2c;
+            --bg-cream: #f9f6f0;
+            --white: #ffffff;
+            --success-green: #28a745;
+            --danger-red: #dc3545;
+            --warning-orange: #fd7e14;
+        }
 
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
+        body { background-color: var(--bg-cream); color: var(--text-dark); padding-bottom: 50px; }
+        
+        /* Header Section */
+        header { 
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue)); 
+            color: white; 
+            text-align: center; 
+            padding: 25px 15px; 
+            border-bottom: 5px solid var(--accent-gold);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .logo-container {
+            max-width: 320px;
+            margin: 0 auto 15px auto;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 2px solid var(--accent-gold);
+        }
+
+        header h1 { font-size: 2rem; font-weight: 900; color: var(--accent-gold); margin-bottom: 5px; }
+        header p { opacity: 0.95; font-size: 1.1rem; font-weight: 700; }
+        
+        /* Features Bar */
+        .features-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            border-radius: 20px;
+            margin: 15px auto 0 auto;
+            max-width: 600px;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .container { max-width: 1100px; margin: 25px auto; padding: 0 15px; }
+        
+        /* Controls Section */
+        .controls { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+        .search-box { 
+            width: 100%; 
+            padding: 14px 18px; 
+            border: 2px solid var(--secondary-blue); 
+            border-radius: 10px; 
+            font-size: 1rem; 
+            outline: none;
+            background: white;
+        }
+        
+        .categories { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
+        .btn-cat { 
+            padding: 10px 20px; 
+            border: 2px solid var(--secondary-blue); 
+            background: white; 
+            color: var(--primary-blue); 
+            border-radius: 25px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            white-space: nowrap; 
+            transition: 0.3s; 
+        }
+        .btn-cat.active, .btn-cat:hover { background: var(--primary-blue); color: var(--accent-gold); }
+
+        /* Products Grid */
         .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.2s; display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { width: 100%; height: 180px; object-fit: cover; background-color: #eee; }
+        
+        /* Product Card */
+        .card { 
+            background: white; 
+            border-radius: 15px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06); 
+            transition: transform 0.2s, box-shadow 0.2s; 
+            display: flex; 
+            flex-direction: column; 
+            position: relative;
+            border: 1px solid #e0e0e0;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        
+        .card-img-wrapper { position: relative; width: 100%; height: 200px; background-color: #f0f0f0; }
+        .card img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Availability Badge */
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .badge.in-stock { background-color: var(--success-green); }
+        .badge.out-of-stock { background-color: var(--danger-red); }
+        .badge.coming-soon { background-color: var(--warning-orange); }
+
         .card-body { padding: 15px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-        .card-title { font-weight: bold; font-size: 1.1rem; margin-bottom: 8px; }
-        .card-desc { font-size: 0.9rem; color: #666; margin-bottom: 15px; }
-        .card-price { font-size: 1.2rem; font-weight: bold; color: #2a5298; margin-bottom: 15px; }
-        .btn-order { display: block; width: 100%; text-align: center; background: #25d366; color: white; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: bold; }
+        .card-title { font-weight: bold; font-size: 1.1rem; color: var(--primary-blue); margin-bottom: 6px; }
+        .card-desc { font-size: 0.85rem; color: #666; margin-bottom: 12px; line-height: 1.4; }
+        .card-price { font-size: 1.2rem; font-weight: 900; color: var(--secondary-blue); margin-bottom: 12px; }
+        
+        .btn-order { 
+            display: block; 
+            width: 100%; 
+            text-align: center; 
+            background: #25d366; 
+            color: white; 
+            text-decoration: none; 
+            padding: 10px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            transition: 0.2s;
+        }
         .btn-order:hover { background: #1ebd56; }
+        .btn-order.disabled { background: #ccc; cursor: not-allowed; pointer-events: none; }
     </style>
 </head>
 <body>
 
     <header>
+        <!-- صورة الشعار -->
+        <div class="logo-container">
+            <img src="logo.jpg" alt="شعار مكتبة المصطفى">
+        </div>
         <h1>مكتبة المصطفى</h1>
-        <p>أهلاً بكم في كتالوج الأدوات المدرسية والقرطاسية - موسم العودة للمدارس</p>
+        <p>كل ما يحتاجه الطالب... في مكان واحد</p>
+        
+        <div class="features-bar">
+            <span>✔ جودة عالية</span>
+            <span>🏷 تنوع كبير</span>
+            <span>💰 أسعار مناسبة</span>
+        </div>
     </header>
 
     <div class="container">
         <!-- البحث والتصفية -->
         <div class="controls">
-            <input type="text" id="searchInput" class="search-box" placeholder="ابحث عن قلم، دفتر، باقة..." onkeyup="filterProducts()">
+            <input type="text" id="searchInput" class="search-box" placeholder="🔍 ابحث عن قلم، دفتر، لعبة، أو هدية..." onkeyup="filterProducts()">
             <div class="categories">
                 <button class="btn-cat active" onclick="filterCategory('all', this)">الكل</button>
+                <button class="btn-cat" onclick="filterCategory('stationery', this)">قرطاسية وأقلام</button>
+                <button class="btn-cat" onclick="filterCategory('toys', this)">ألعاب وهدايا</button>
                 <button class="btn-cat" onclick="filterCategory('packages', this)">باقات المدارس</button>
-                <button class="btn-cat" onclick="filterCategory('notebooks', this)">دفاتر ومذكرات</button>
-                <button class="btn-cat" onclick="filterCategory('pens', this)">أقلام ومقالم</button>
                 <button class="btn-cat" onclick="filterCategory('art', this)">رسم وفنون</button>
             </div>
         </div>
@@ -55,40 +181,46 @@ OCTYPE html>
         <!-- شبكة المنتجات -->
         <div class="products-grid" id="productsGrid">
             
-            <!-- منتج 1 -->
-            <div class="card" data-category="packages" data-name="باقة الابتدائي المتكاملة">
-                <img src="https://via.placeholder.com/300x200?text=باقة+الابتدائي" alt="باقة الابتدائي">
+            <!-- نموذج منتج متوفر -->
+            <div class="card" data-category="stationery" data-name="دفتر سلك 100 ورقة">
+                <div class="card-img-wrapper">
+                    <span class="badge in-stock">متوفر ✅</span>
+                    <img src="https://via.placeholder.com/300x200?text=دفتر+سلك" alt="دفتر سلك">
+                </div>
                 <div class="card-body">
                     <div>
-                        <div class="card-title">باقة الابتدائي المتكاملة</div>
-                        <div class="card-desc">تضم دفاتر مسطرة، ألوان غير سامة، مقلمة، وأقلام رصاص وممحاة.</div>
+                        <div class="card-title">دفتر سلك مقوى 100 ورقة</div>
+                        <div class="card-desc">دفتر جامعي عالي الجودة بتصميم أنيق وأوراق ممتازة.</div>
                     </div>
                     <div>
-                        <div class="card-price">50 ر.س</div>
-                        <a href="https://wa.me/966000000000?text=مرحباً،%20أود%20الاستفسار%20عن%20باقة%20الابتدائي%20المتكاملة" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                        <div class="card-price">تواصل للسعر</div>
+                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20الاستفسار%20عن%20دفتر%20سلك%20100%20ورقة" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
                     </div>
                 </div>
             </div>
 
-            <!-- منتج 2 -->
-            <div class="card" data-category="notebooks" data-name="دفتر سلك 5 فواصل">
-                <img src="https://via.placeholder.com/300x200?text=دفتر+سلك" alt="دفتر سلك">
+            <!-- نموذج منتج سيتوفر قريباً -->
+            <div class="card" data-category="toys" data-name="سيارة تحكم عن بعد">
+                <div class="card-img-wrapper">
+                    <span class="badge coming-soon">سيتوفر قريباً ⏳</span>
+                    <img src="https://via.placeholder.com/300x200?text=لعبة+سيارة" alt="سيارة تحكم">
+                </div>
                 <div class="card-body">
                     <div>
-                        <div class="card-title">دفتر سلك مقسم (5 فواصل)</div>
-                        <div class="card-desc">مثالي لطلاب المرحلة المتوسطة، الثانوية والجامعة لتنظيم المواد.</div>
+                        <div class="card-title">سيارة سباق تحكم عن بعد</div>
+                        <div class="card-desc">سريعة وقوية وقابلة للشحن، خامة عالية الجودة.</div>
                     </div>
                     <div>
-                        <div class="card-price">18 ر.س</div>
-                        <a href="https://wa.me/966000000000?text=مرحباً،%20أود%20طلب%20دفتر%20سلك%205%20فواصل" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                        <div class="card-price">قريباً</div>
+                        <a href="#" class="btn-order disabled">غير متاح للطلب حالياً</a>
                     </div>
                 </div>
             </div>
 
-            <!-- منتج 3 -->
-            <div class="card" data-category="pens" data-name="طقم أقلام تمييز باستيل">
-                <img src="https://via.placeholder.com/300x200?text=أقلام+هايلايتر" alt="أقلام تمييز">
-                pt>
+        </div>
+    </div>
+
+    <script>
         let currentCategory = 'all';
 
         function filterCategory(cat, btn) {
@@ -99,7 +231,14 @@ OCTYPE html>
         }
 
         function filterProducts() {
-               let matchesCat = (currentCategory === 'all' || cat === currentCategory);
+            let search = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                let name = card.getAttribute('data-name').toLowerCase();
+                let cat = card.getAttribute('data-category');
+
+                let matchesCat = (currentCategory === 'all' || cat === currentCategory);
                 let matchesSearch = name.includes(search);
 
                 if (matchesCat && matchesSearch) {
@@ -110,4 +249,5 @@ OCTYPE html>
             });
         }
     </script>
-<
+</body>
+</html>
