@@ -124,8 +124,6 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .badge.in-stock { background-color: var(--success-green); }
-        .badge.out-of-stock { background-color: var(--danger-red); }
-        .badge.coming-soon { background-color: var(--warning-orange); }
 
         .card-body { padding: 15px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
         .card-title { font-weight: bold; font-size: 1.1rem; color: var(--primary-blue); margin-bottom: 6px; }
@@ -179,34 +177,106 @@
         <!-- شبكة المنتجات -->
         <div class="products-grid" id="productsGrid">
             
-            <!-- منتج 1 -->
-            <div class="card" data-category="stationery" data-name="دفتر عربي 40 صفحة">
+            <!-- منتج 1: دفتر مذكرات أنيق -->
+            <div class="card" data-category="stationery" data-name="دفتر مذكرات أنيق">
                 <div class="card-img-wrapper">
                     <span class="badge in-stock">متوفر ✅</span>
-                    <img src="https://via.placeholder.com/300x200?text=دفتر+عربي+40" alt="دفتر عربي 40 صفحة">
+                    <img src="diary-elegant.jpg" alt="دفتر مذكرات أنيق">
                 </div>
                 <div class="card-body">
                     <div>
-                        <div class="card-title">دفتر عربي 40 صفحة</div>
-                        <div class="card-desc">دفتر مدرسي ورقي ممتاز للمراحل الابتدائية.</div>
+                        <div class="card-title">دفتر مذكرات أنيق (تشكيلة ألوان)</div>
+                        <div class="card-desc">دفتر مذكرات فاخر بغلاف مقوى وتفاصيل ذهبية جذابة.</div>
                     </div>
                     <div>
-                        <div class="card-price">30 ل.س</div>
-                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%2040%20صفحة" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                        <div class="card-price">220 ل.س</div>
+                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20مذكرات%20أنيق" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
                     </div>
                 </div>
             </div>
 
-            <!-- منتج 2 -->
+            <!-- منتج 2: دفتر عربي 5 أقسام -->
+            <div class="card" data-category="stationery" data-name="دفتر عربي 5 اقسام">
+                <div class="card-img-wrapper">
+                    <span class="badge in-stock">متوفر ✅</span>
+                    <img src="notebook-5sec.jpg" alt="دفتر عربي 5 اقسام">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">دفتر عربي (5 أقسام)</div>
+                        <div class="card-desc">سعة كبيرة تنظم لك معظم المواد في دفتر سلك واحد بتصاميم مميزة.</div>
+                    </div>
+                    <div>
+                        <div class="card-price">120 ل.س</div>
+                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%205%20اقسام" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 3: دفتر جامعي كبير -->
+            <div class="card" data-category="stationery" data-name="دفتر عربي جامعي كبير قسمين">
+                <div class="card-img-wrapper">
+                    <span class="badge in-stock">متوفر ✅</span>
+                    <img src="notebook-uni.jpg" alt="دفتر عربي جامعي كبير قسمين">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">دفتر عربي جامعي كبير (قسمين)</div>
+                        <div class="card-desc">قياس كبير بتصاميم ورسومات متنوعة للمرحلة الثانوية والجامعية.</div>
+                    </div>
+                    <div>
+                        <div class="card-price">120 ل.س</div>
+                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%20جامعي%20كبير%20قسمين" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 4: دفتر عربي ثلاث أقسام -->
+            <div class="card" data-category="stationery" data-name="دفتر عربي ثلاث اقسام">
+                <div class="card-img-wrapper">
+                    <span class="badge in-stock">متوفر ✅</span>
+                    <img src="notebook-3sec.jpg" alt="دفتر عربي ثلاث اقسام">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">دفتر عربي (3 أقسام)</div>
+                        <div class="card-desc">تنسيق ممتاز لطلاب الإعدادي والثانوي لتجميع المواد في دفتر سلك واحد.</div>
+                    </div>
+                    <div>
+                        <div class="card-price">100 ل.س</div>
+                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%20ثلاث%20اقسام" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 5: دفتر عربي قسمين (سلك أصفر) -->
+            <div class="card" data-category="stationery" data-name="دفتر عربي قسمين">
+                <div class="card-img-wrapper">
+                    <span class="badge in-stock">متوفر ✅</span>
+                    <img src="notebook-2sec.jpg" alt="دفتر عربي قسمين">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">دفتر عربي (قسمين)</div>
+                        <div class="card-desc">عملي ومقسم لتنظيم مادتين بتصاميم شبابية وغلاف سلك متين.</div>
+                    </div>
+                    <div>
+                        <div class="card-price">70 ل.س</div>
+                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%20قسمين" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتج 6: دفتر إنجليزي قسمين -->
             <div class="card" data-category="stationery" data-name="دفتر انجليزي قسمين">
                 <div class="card-img-wrapper">
                     <span class="badge in-stock">متوفر ✅</span>
-                    <img src="https://via.placeholder.com/300x200?text=دفتر+انجليزي+قسمين" alt="دفتر انجليزي قسمين">
+                    <img src="notebook-eng-70.jpg" alt="دفتر انجليزي قسمين">
                 </div>
                 <div class="card-body">
                     <div>
                         <div class="card-title">دفتر إنجليزي قسمين</div>
-                        <div class="card-desc">دفتر مخصص للغة الإنجليزية مقسم بشكل عملي.</div>
+                        <div class="card-desc">دفتر مخصص للغة الإنجليزية بسلك جانبي وغلاف جذاب.</div>
                     </div>
                     <div>
                         <div class="card-price">70 ل.س</div>
@@ -215,7 +285,25 @@
                 </div>
             </div>
 
-            <!-- منتج 3 -->
+            <!-- منتج 7: دفتر عربي 40 صفحة -->
+            <div class="card" data-category="stationery" data-name="دفتر عربي 40 صفحة">
+                <div class="card-img-wrapper">
+                    <span class="badge in-stock">متوفر ✅</span>
+                    <img src="notebook-30.jpg" alt="دفتر عربي 40 صفحة">
+                </div>
+                <div class="card-body">
+                    <div>
+                        <div class="card-title">دفتر عربي 40 صفحة (رسومات أطفال)</div>
+                        <div class="card-desc">دفتر مدرسي ورقي ممتاز بتصاميم شخصيات كرتونية محببة.</div>
+                    </div>
+                    <div>
+                        <div class="card-price">30 ل.س</div>
+                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%2040%20صفحة" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- منتجات إضافية بانتظار الصور -->
             <div class="card" data-category="stationery" data-name="دفتر انجليزي 40 صفحة">
                 <div class="card-img-wrapper">
                     <span class="badge in-stock">متوفر ✅</span>
@@ -233,7 +321,6 @@
                 </div>
             </div>
 
-            <!-- منتج 4 -->
             <div class="card" data-category="stationery" data-name="دفتر مذكرات بناتي">
                 <div class="card-img-wrapper">
                     <span class="badge in-stock">متوفر ✅</span>
@@ -241,7 +328,7 @@
                 </div>
                 <div class="card-body">
                     <div>
-                        <div class="card-title">دفتر مذكرات بناتي أنيق</div>
+                        <div class="card-title">دفتر مذكرات بناتي</div>
                         <div class="card-desc">تصميم مميز وألوان جذابة مخصص للمذكرات واليوميات.</div>
                     </div>
                     <div>
@@ -251,7 +338,6 @@
                 </div>
             </div>
 
-            <!-- منتج 5 -->
             <div class="card" data-category="stationery" data-name="دفتر عربي 70 صفحة">
                 <div class="card-img-wrapper">
                     <span class="badge in-stock">متوفر ✅</span>
@@ -265,78 +351,6 @@
                     <div>
                         <div class="card-price">50 ل.س</div>
                         <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%2070%20صفحة" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- منتج 6 -->
-            <div class="card" data-category="stationery" data-name="دفتر عربي قسمين">
-                <div class="card-img-wrapper">
-                    <span class="badge in-stock">متوفر ✅</span>
-                    <img src="https://via.placeholder.com/300x200?text=دفتر+عربي+قسمين" alt="دفتر عربي قسمين">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">دفتر عربي (قسمين)</div>
-                        <div class="card-desc">عملي ومقسم لتنظيم مادتين في دفتر واحد.</div>
-                    </div>
-                    <div>
-                        <div class="card-price">70 ل.س</div>
-                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%20قسمين" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- منتج 7 -->
-            <div class="card" data-category="stationery" data-name="دفتر عربي ثلاث اقسام">
-                <div class="card-img-wrapper">
-                    <span class="badge in-stock">متوفر ✅</span>
-                    <img src="https://via.placeholder.com/300x200?text=دفتر+عربي+3+اقسام" alt="دفتر عربي ثلاث اقسام">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">دفتر عربي (3 أقسام)</div>
-                        <div class="card-desc">تنسيق ممتاز لطلاب الإعدادي والثانوي لتجميع المواد.</div>
-                    </div>
-                    <div>
-                        <div class="card-price">100 ل.س</div>
-                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%20ثلاث%20اقسام" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- منتج 8 -->
-            <div class="card" data-category="stationery" data-name="دفتر عربي 5 اقسام">
-                <div class="card-img-wrapper">
-                    <span class="badge in-stock">متوفر ✅</span>
-                    <img src="https://via.placeholder.com/300x200?text=دفتر+عربي+5+اقسام" alt="دفتر عربي 5 اقسام">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">دفتر عربي (5 أقسام)</div>
-                        <div class="card-desc">سعة كبيرة تنظم لك معظم المواد في دفتر سلك واحد.</div>
-                    </div>
-                    <div>
-                        <div class="card-price">120 ل.س</div>
-                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%205%20اقسام" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- منتج 9 -->
-            <div class="card" data-category="stationery" data-name="دفتر عربي جامعي كبير قسمين">
-                <div class="card-img-wrapper">
-                    <span class="badge in-stock">متوفر ✅</span>
-                    <img src="https://via.placeholder.com/300x200?text=دفتر+جامعي+قسمين" alt="دفتر عربي جامعي كبير قسمين">
-                </div>
-                <div class="card-body">
-                    <div>
-                        <div class="card-title">دفتر عربي جامعي كبير (قسمين)</div>
-                        <div class="card-desc">قياس كبير بتصميم فاخر للمرحلة الثانوية والجامعية.</div>
-                    </div>
-                    <div>
-                        <div class="card-price">120 ل.س</div>
-                        <a href="https://wa.me/963990835712?text=مرحباً%20مكتبة%20المصطفى،%20أود%20طلب%20دفتر%20عربي%20جامعي%20كبير%20قسمين" target="_blank" class="btn-order">طلب عبر الواتساب 💬</a>
                     </div>
                 </div>
             </div>
